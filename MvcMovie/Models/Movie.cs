@@ -33,13 +33,13 @@ namespace MvcMovie.Models
 	}
 
 
-	public class MovieDBConext: DbContext
+	public class MovieDBContext : DbContext
 	{
 		public MovieDBContext()
 		{
 			Database.SetInitializer<MovieDBContext>
 				(new MigrateDatabaseToLatestVersion<MovieDBContext,
-					MvcMovie.Migrations.Configuration());
+					MvcMovie.Migrations.Configuration>());
 		}
 
 		public DbSet<Movie> Movies { get; set; }
